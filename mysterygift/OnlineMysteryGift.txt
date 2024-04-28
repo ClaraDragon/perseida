@@ -1,5 +1,5 @@
 ret = false
-if !hasGiftPrize?(PBSpecies::CELEBI,:CLASSIC,"INV2011") #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
+if !hasGachaPrize?(PBSpecies::CELEBI,:CLASSIC,"INV2011") #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
 	Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
 	pokemon=PokeBattle_Pokemon.new(:CELEBI,50,$Trainer)
         pokemon.ot="INV2011"
