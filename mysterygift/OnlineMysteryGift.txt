@@ -1,30 +1,27 @@
-    if $game_switches[476] != true
-        Kernel.pbMessage(_INTL("¡Código Correcto!"))
-        Kernel.pbMessage(_INTL("¡Aquí tienes un regalo para ti!"))
-        pbWait(10)
-		p=PokeBattle_Pokemon.new(:CATERPIE,10,$Trainer)
-        p.setAbility(0)
-        p.makeMale
-        p.ot="Patata"
-    	p.pbLearnMove(:BUGBITE)
-    	p.pbLearnMove(:BRICKBREAK)
-        p.giveRibbon(:BIRTHDAY)
-        p.setNature(:ADAMANT)
-        p.happiness=200
-        p.obtainMode=4
-        p.iv[1]=31
-        p.iv[2]=31
-        p.iv[3]=31
-        p.iv[4]=31
-        p.iv[5]=31
-        p.iv[0]=31
-        p.obtainText=_INTL("De tierras lejanas.")
-        p.trainerID=666
-        p.calcStats
-        pbAddPokemonSilent(p,1)
-        Kernel.pbMessage(_INTL("\\PN obtuvo a Caterpie!\\se[PokemonGet]\\1"))
-        $game_switches[476]=true
-	else
-		Kernel.pbMessage(_INTL("Este código ya ha sido usado."))
-        Kernel.pbMessage(_INTL("¡Sigue disfrutando del juego!"))        
+ret = false
+if !hasGiftPrize?(PBSpecies::CELEBI,:CLASSIC,"INV2011") #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
+	Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+	pokemon=PokeBattle_Pokemon.new(:CELEBI,50,$Trainer)
+        pokemon.ot="INV2011"
+        pokemon.trainerID=01211
+        pokemon.setItem(:JABOCABERRY)
+    	pokemon.pbLearnMove(:HEALINGWISH)
+        pokemon.setNature(:MODEST)
+	#Esto permite aleatorizar los iv's del pokémon, pero garantizar que 3 de ellos sean perfectos.
+	maxIV = 1;pokemon.iv[rand(6)]=31
+	randivs = [0,1,2,3,4,5]
+	for i in randivs.shuffle
+	  next if pokemon.iv[i]==31
+	  maxIV +=1
+	  pokemon.iv[i]=31 
+	  break if maxIV>=3
 	end
+        pokemon.happiness=100
+	pokemon.obtainMode=4
+	pokemon.calcStats
+        Kernel.pbAddPokemon(pokemon,nil,true,false)
+	ret = true
+end
+if !ret
+	Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
+end
