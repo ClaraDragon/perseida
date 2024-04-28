@@ -21,6 +21,7 @@
     @pokemon.happiness=100
     @pokemon.obtainMode=4
     @pokemon.calcStats
+    showPokemon
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
     ret = true
   end
