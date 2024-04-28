@@ -21,8 +21,9 @@
     @pokemon.happiness=100
     @pokemon.obtainMode=4
     @pokemon.calcStats
-    showPokemon
+    showHidePokemon rescue nil
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
     ret = true
   end
   if !ret
