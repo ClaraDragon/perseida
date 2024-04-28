@@ -1,26 +1,27 @@
   ret = false
-  if !hasGachaPrize?(PBSpecies::CELEBI,:EVENT,"INV2011") #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
+  if !hasGachaPrize?(PBSpecies::CELEBI,:CLASSIC,"INV2011") #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
     Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
-    pokemon=PokeBattle_Pokemon.new(:CELEBI,50,$Trainer)
-    pokemon.ot="INV2011"
-    pokemon.trainerID=01211
-    pokemon.setItem(:JABOCABERRY)
-    pokemon.pbLearnMove(:HEALINGWISH)
-    pokemon.setNature(:MODEST)
-    pokemon.giveRibbon(PBRibbons::EVENT)
+    @pokemon=PokeBattle_Pokemon.new(:CELEBI,50,$Trainer)
+    @pokemon.ot="INV2011"
+    @pokemon.trainerID=01211
+    @pokemon.setItem(:JABOCABERRY)
+    @pokemon.pbLearnMove(:HEALINGWISH)
+    @pokemon.setNature(:MODEST)
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
     #Esto permite aleatorizar los iv's del pokémon, pero garantizar que 3 de ellos sean perfectos.
-    maxIV = 1;pokemon.iv[rand(6)]=31
+    maxIV = 1
+    @pokemon.iv[rand(6)]=31
     randivs = [0,1,2,3,4,5]
     for i in randivs.shuffle
-      next if pokemon.iv[i]==31
+      next if @pokemon.iv[i]==31
       maxIV +=1
-      pokemon.iv[i]=31 
+      @pokemon.iv[i]=31 
       break if maxIV>=3
     end
-    pokemon.happiness=100
-    pokemon.obtainMode=4
-    pokemon.calcStats
-    scene.pokeGift(pokemon)
+    @pokemon.happiness=100
+    @pokemon.obtainMode=4
+    @pokemon.calcStats
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
     ret = true
   end
   if !ret
