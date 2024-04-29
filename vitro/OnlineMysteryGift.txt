@@ -38,63 +38,6 @@
     showHidePokemon(false) rescue nil
     ret = true
   end
-  if false
-    if !hasEventMon?(PBSpecies::JIRACHI,:CLASSIC,"NEWYEAR") 
-      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
-      @pokemon=PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
-      #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
-      @pokemon.giveRibbon(PBRibbons::CLASSIC)
-      @pokemon.ot="NEWYEAR"
-      ####################################################
-      @pokemon.trainerID=06260
-      @pokemon.setItem(:LIECHIBERRY)
-      @pokemon.pbLearnMove(:DRACOMETEOR)
-      #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
-      maxIV = 1
-      @pokemon.iv[rand(6)]=31
-      randivs = [0,1,2,3,4,5]
-      for i in randivs.shuffle
-        next if @pokemon.iv[i]==31
-        maxIV +=1
-        @pokemon.iv[i]=31 
-        break if maxIV>=3
-      end
-      @pokemon.obtainMode=4
-      @pokemon.calcStats
-      showHidePokemon rescue nil
-      Kernel.pbAddPokemon(@pokemon,5,true,false)
-      showHidePokemon(false) rescue nil
-      ret = true
-    end
-  end
-  if false
-    if !hasEventMon?(PBSpecies::MEW,:CLASSIC,"PKMNDAY") 
-      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
-      @pokemon=PokeBattle_Pokemon.new(:MEW,5,$Trainer)
-      #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
-      @pokemon.giveRibbon(PBRibbons::CLASSIC)
-      @pokemon.ot="PKMNDAY"
-      ####################################################
-      @pokemon.trainerID=10160
-      #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
-      maxIV = 1
-      @pokemon.iv[rand(6)]=31
-      randivs = [0,1,2,3,4,5]
-      for i in randivs.shuffle
-        next if @pokemon.iv[i]==31
-        maxIV +=1
-        @pokemon.iv[i]=31 
-        break if maxIV>=3
-      end
-      @pokemon.obtainMode=4
-      @pokemon.calcStats
-      showHidePokemon rescue nil
-      Kernel.pbAddPokemon(@pokemon,5,true,false)
-      showHidePokemon(false) rescue nil
-      ret = true
-    end
-  end
-
   if !ret
     Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
   end
