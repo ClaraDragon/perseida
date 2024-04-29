@@ -1,6 +1,7 @@
 ####################################################
 # BASE DE REGALO MISTERIOSO PARA EL SCRIPT DE REGALOS MISTERIOSOS AVANZADOS DE CLARA
 # Tómalo de base para crear o añadir nuevos eventos. Puedes entregar más de un evento a la vez.
+# Subelo a Pastebin o a Github como un txt y coge el enlace del archivo en RAW.
 ####################################################
   ret = false
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
