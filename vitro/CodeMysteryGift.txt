@@ -72,12 +72,12 @@ if password=="CR0WN"
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
     @pokemon.ot="INV2011"
     @pokemon.trainerID=02211
-    @pokemon.setItem(:ROWAPBERRY)
-    @pokemon.pbLearnMove(:SACREDFLARE)
-    @pokemon.pbLearnMove(:CRUSHCLAW)
+    @pokemon.setItem(:MICLEBERRY)
+    @pokemon.pbLearnMove(:ZAPCANNON)
+    @pokemon.pbLearnMove(:WEATHERBALL)
     @pokemon.pbLearnMove(:EXTREMESPEED)
-    @pokemon.pbLearnMove(:HOWL)
-    @pokemon.setNature(:ADAMANT)
+    @pokemon.pbLearnMove(:AURASPHERE)
+    @pokemon.setNature(:RASH)
     #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
     maxIV = 1
     @pokemon.iv[rand(6)]=31

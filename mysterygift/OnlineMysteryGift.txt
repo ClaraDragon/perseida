@@ -6,42 +6,67 @@
   ret = false
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
-  if !hasEventMon?(PBSpecies::CELEBI,:CLASSIC,"INV2011") 
-    Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
-    @pokemon=PokeBattle_Pokemon.new(:CELEBI,50,$Trainer)
-    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
-    @pokemon.giveRibbon(PBRibbons::CLASSIC)
-    @pokemon.ot="INV2011"
-    ####################################################
-    @pokemon.trainerID=01211
-    @pokemon.setItem(:JABOCABERRY)
-    @pokemon.pbLearnMove(:HEALINGWISH)
-    @pokemon.setNature(:MODEST)
-    #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
-    maxIV = 1
-    @pokemon.iv[rand(6)]=31
-    randivs = [0,1,2,3,4,5]
-    for i in randivs.shuffle
-      next if @pokemon.iv[i]==31
-      maxIV +=1
-      @pokemon.iv[i]=31 
-      break if maxIV>=3
+  if (m == 12 && (d >= 25)) || (m == 1 && (d <= 25))
+    if !hasEventMon?(PBSpecies::JIRACHI,:CLASSIC,"NEWYEAR") 
+      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+      @pokemon=PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
+      #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+      @pokemon.giveRibbon(PBRibbons::CLASSIC)
+      @pokemon.ot="NEWYEAR"
+      ####################################################
+      @pokemon.trainerID=06260
+      @pokemon.setItem(:LIECHIBERRY)
+      @pokemon.pbLearnMove(:DRACOMETEOR)
+      #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+      maxIV = 1
+      @pokemon.iv[rand(6)]=31
+      randivs = [0,1,2,3,4,5]
+      for i in randivs.shuffle
+        next if @pokemon.iv[i]==31
+        maxIV +=1
+        @pokemon.iv[i]=31 
+        break if maxIV>=3
+      end
+      @pokemon.obtainMode=4
+      @pokemon.calcStats
+      showHidePokemon rescue nil
+      Kernel.pbAddPokemon(@pokemon,5,true,false)
+      showHidePokemon(false) rescue nil
+      ret = true
     end
-    @pokemon.happiness=100
-    @pokemon.obtainMode=4
-    @pokemon.calcStats
-    showHidePokemon rescue nil
-    Kernel.pbAddPokemon(@pokemon,nil,true,false)
-    showHidePokemon(false) rescue nil
-    ret = true
+  end
+  if (m == 2 && (d >= 27)) || (m == 3 && (d <= 3))
+    if !hasEventMon?(PBSpecies::MEW,:CLASSIC,"PKMNDAY") 
+      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+      @pokemon=PokeBattle_Pokemon.new(:MEW,5,$Trainer)
+      #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+      @pokemon.giveRibbon(PBRibbons::CLASSIC)
+      @pokemon.ot="PKMNDAY"
+      ####################################################
+      @pokemon.trainerID=10160
+      #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+      maxIV = 1
+      @pokemon.iv[rand(6)]=31
+      randivs = [0,1,2,3,4,5]
+      for i in randivs.shuffle
+        next if @pokemon.iv[i]==31
+        maxIV +=1
+        @pokemon.iv[i]=31 
+        break if maxIV>=3
+      end
+      @pokemon.obtainMode=4
+      @pokemon.calcStats
+      showHidePokemon rescue nil
+      Kernel.pbAddPokemon(@pokemon,5,true,false)
+      showHidePokemon(false) rescue nil
+      ret = true
+    end
   end
   if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") 
     Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
     @pokemon=PokeBattle_Pokemon.new(:PICHU,30,$Trainer)
-    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
     @pokemon.ot="PRI2010"
-    ####################################################
     @pokemon.trainerID=03050
     @pokemon.setItem(:EVERSTONE)
     @pokemon.pbLearnMove(:VOLTTACKLE)
