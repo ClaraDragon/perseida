@@ -36,8 +36,10 @@
     showHidePokemon rescue nil
     Kernel.pbAddPokemon(@pokemon,5,true,false)
     showHidePokemon(false) rescue nil
+    p "a"
     ret = true
   end
+  p "b"
   #if !ret
   #  Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
   #end
