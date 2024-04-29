@@ -38,6 +38,6 @@
     showHidePokemon(false) rescue nil
     ret = true
   end
-  if !ret
-    Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
-  end
+  #if !ret
+  #  Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
+  #end
