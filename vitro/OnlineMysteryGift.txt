@@ -7,7 +7,7 @@
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
   if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") 
-    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
     @pokemon=PokeBattle_Pokemon.new(:PICHU,5,$Trainer)
     #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
@@ -39,5 +39,5 @@
     ret = true
   end
   if !ret
-    Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
   end
