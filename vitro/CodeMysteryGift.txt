@@ -5,15 +5,15 @@
 # Este archivo tiene un ejemplo de códigos
 ####################################################
 ret = false
-password=pbEnterText(_INTL("Inserta tu código."),0,12)
+password=pbEnterText(_INTL("\\w[menuskin]\\C[8]Inserta tu código."),0,12)
 password=password.upcase 
 if password=="CR0WN"
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
   if  !$Trainer.hasOwned?(:SUICUNE) && !$Trainer.hasOwned?(:ENTEI) && !$Trainer.hasOwned?(:RAIKOU)
-    Kernel.pbMessage(_INTL("\w[Negro]Aún no puedes recibir este regalo.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]Aún no puedes recibir este regalo.\\wtnp[20]"))
   elsif !hasEventMon?(PBSpecies::SUICUNE,:CLASSIC,"INV2011") || !hasEventMon?(PBSpecies::ENTEI,:CLASSIC,"INV2011") || !hasEventMon?(PBSpecies::RAIKOU,:CLASSIC,"INV2011") 
-    Kernel.pbMessage(_INTL("\w[Negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
     @pokemon=PokeBattle_Pokemon.new(:SUICUNE,30,$Trainer)
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
     @pokemon.ot="INV2011"
@@ -97,7 +97,7 @@ if password=="CR0WN"
     ########################################################################################################
     ret = true
   else
-    Kernel.pbMessage(_INTL("\w[Negro]El regalo ya ha sido recibido.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]El regalo ya ha sido recibido.\\wtnp[20]"))
   end
 elsif password=="P1K0R3J4"
   if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") 
@@ -131,6 +131,8 @@ elsif password=="P1K0R3J4"
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
     showHidePokemon(false) rescue nil
     ret = true
+  else
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]El regalo ya ha sido recibido.\\wtnp[20]"))
   end
 elsif password=="T1M3"
   if !hasEventMon?(PBSpecies::CELEBI,:CLASSIC,"PRI2010") 
@@ -163,9 +165,9 @@ elsif password=="T1M3"
     showHidePokemon(false) rescue nil
     ret = true
   else
-    Kernel.pbMessage(_INTL("El regalo ya ha sido recibido.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]El regalo ya ha sido recibido.\\wtnp[20]"))
   end
 else
- Kernel.pbMessage(_INTL("No se encontró ningún Regalo Misterioso con ese código.\\wtnp[20]"))
+ Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]No se encontró ningún Regalo Misterioso con ese código.\\wtnp[20]"))
 end
 
