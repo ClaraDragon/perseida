@@ -38,7 +38,7 @@
     showHidePokemon(false) rescue nil
     ret = true
   end
-  if (m == 12 && (d >= 25)) || (m == 1 && (d <= 25))
+  if (m == 12 && (d >= 25)) || (m == 1 && (d <= 25)) || false
     if !hasEventMon?(PBSpecies::JIRACHI,:CLASSIC,"NEWYEAR") 
       Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
       @pokemon=PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
@@ -67,7 +67,7 @@
       ret = true
     end
   end
-  if (m == 2 && (d >= 27)) || (m == 3 && (d <= 3))
+  if (m == 2 && (d >= 27)) || (m == 3 && (d <= 3)) || false
     if !hasEventMon?(PBSpecies::MEW,:CLASSIC,"PKMNDAY") 
       Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
       @pokemon=PokeBattle_Pokemon.new(:MEW,5,$Trainer)
