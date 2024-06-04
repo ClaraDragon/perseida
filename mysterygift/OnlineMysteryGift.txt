@@ -8,7 +8,7 @@
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
   if (m == 12 && (d >= 25)) || (m == 1 && (d <= 25))
     if !hasEventMon?(PBSpecies::JIRACHI,:CLASSIC,"NEWYEAR") 
-      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
       @pokemon=PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
       #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
       @pokemon.giveRibbon(PBRibbons::CLASSIC)
@@ -37,7 +37,7 @@
   end
   if (m == 2 && (d >= 27)) || (m == 3 && (d <= 3))
     if !hasEventMon?(PBSpecies::MEW,:CLASSIC,"PKMNDAY") 
-      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
       @pokemon=PokeBattle_Pokemon.new(:MEW,5,$Trainer)
       #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
       @pokemon.giveRibbon(PBRibbons::CLASSIC)
@@ -63,7 +63,7 @@
     end
   end
   if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") 
-    Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
     @pokemon=PokeBattle_Pokemon.new(:PICHU,30,$Trainer)
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
     @pokemon.ot="PRI2010"
