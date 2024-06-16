@@ -85,20 +85,6 @@ table.evolucion {
     pointer-events: none;
   }
   
-
-  img.responsive {
-    box-shadow: 0 2px 2px 0px #212121;
-    background-color: #e9ecfe;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-    pointer-events: none;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
-
   ol, ul {
     list-style: none;
 }
