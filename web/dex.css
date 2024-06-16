@@ -56,7 +56,7 @@ table.evolucion {
     line-height: 0;
     display:inline;
 }
-  
+
 .Constela::before {content: "de Constela"}
   
   table.evolucion td.flecha {  background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTAiIGhlaWdodD0iMjgiPjxwYXRoIHN0eWxlPSJmaWxsOiNkZGQiIGQ9Im0gMCw2LjUgMzMyLDAgMCwtNi41IDE4LDE0IC0xOCwxNCAwLC02LjUgLTMzMiwwIHoiIC8+PC9zdmc+) no-repeat right center;
@@ -85,6 +85,20 @@ table.evolucion {
     pointer-events: none;
   }
   
+
+  img.responsive {
+    box-shadow: 0 2px 2px 0px #212121;
+    background-color: #e9ecfe;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    pointer-events: none;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
   ol, ul {
     list-style: none;
 }
