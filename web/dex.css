@@ -1,0 +1,132 @@
+ul.tipos{
+  /*/display: inline-block;/*/
+  text-align: center;
+  text-transform: none;
+  word-break: break-all;
+  /*/padding: 0.25em 0;/*/
+  padding: 0;
+  padding-bottom:10px;
+}
+
+table.data {
+  border-collapse: collapse;
+  width: 80%;
+  
+}
+
+th.data {
+  text-align: right;
+  width:25%;
+  padding: 5px;
+}
+  
+td.data {
+  text-align: left;
+  width:50%;
+  padding: 5px;
+}
+  
+table.stats {
+  border-collapse: collapse;
+  text-align: center;
+  width: 90%;
+  font-size: smaller;
+}
+
+th.stats {
+  width:30%;
+  padding: 5px;
+}
+  
+td.stats {
+  width:30%;
+  padding: 5px;
+}
+table.evolucion {
+    text-align: center;
+    margin: 0 auto;
+    /*/border: 1px solid #e0e0e0;/*/
+    /*/font-size: small;/*/
+    line-height: 1.4em;
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+.Constela {
+    font-size: smaller;
+    line-height: 0;
+    display:inline;
+}
+  
+.Constela::before {content: "de Constela"}
+  
+  table.evolucion td.flecha {  background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTAiIGhlaWdodD0iMjgiPjxwYXRoIHN0eWxlPSJmaWxsOiNkZGQiIGQ9Im0gMCw2LjUgMzMyLDAgMCwtNi41IDE4LDE0IC0xOCwxNCAwLC02LjUgLTMzMiwwIHoiIC8+PC9zdmc+) no-repeat right center;
+      height: 30px;
+      padding: 0 1.5em;
+      font-size: medium;
+      vertical-align: middle;
+      max-width:96px;
+      min-width:80px;
+  }
+
+  table.evolucion td {
+      /*padding: 0.2em 1em 0.2em;*/
+      vertical-align: middle;
+  }
+
+  img.poke {
+    box-shadow: 0 2px 2px 0px #212121;
+    background-color: #e9ecfe;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    max-width: 80px;
+    width: 100%;
+    pointer-events: none;
+  }
+  
+  ol, ul {
+    list-style: none;
+}
+  
+  
+  ul.evolucion {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+li{
+  display: inline;
+  background-color: #616161;
+  border: 3px;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 2px 5px;
+  min-height: 12px;
+}
+
+@media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+    li {
+      display: inline-block;
+    }
+  
+    table.evolucion td.flecha {
+        min-width:40px;
+    }
+      
+    table.evolucion {
+      font-size: smaller;
+    }
+    table.evolucion td.flecha {font-size: smaller;font-weight:bold}
+
+    li{
+      padding: 0;
+      font-size: small;
+    }
+
+    p2 {
+      font-size: small;
+    }
+
+      
+} 
