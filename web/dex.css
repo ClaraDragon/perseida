@@ -94,8 +94,8 @@ table.evolucion {
     margin: 0 auto;
     pointer-events: none;
     width: 100%;
-    max-width: 400px;
-    height: auto;
+    max-height: 400px;
+    width: auto;
 }
 
   ol, ul {
