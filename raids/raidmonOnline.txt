@@ -1,20 +1,20 @@
 raid_activa = true
 if raid_activa
-#Selección de Rango
-rank = 2
-
-#Selección de la especie del pokémon
-@dummypokemon.species = PBSpecies::ABSOL
-#@dummypokemon.form = 1
-
-
-#NO tocar esta parte
-@dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
-@dummypokemon.calcStats
-@dummypokemon.resetMoves
-@dummypokemon.giveRibbon(:MIGHTIESTMARK)
-
-#Configuraciones adicionales
-#@dummypokemon.makeShiny
-#@dummypokemon.setItem(:MEGAPIEDRA)
+  #Selección de Rango
+  rank = 2
+  
+  #Selección de la especie del pokémon
+  @dummypokemon.species = PBSpecies::ABSOL
+  #@dummypokemon.form = 1
+  
+  
+  #NO tocar esta parte
+  @dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
+  @dummypokemon.calcStats
+  @dummypokemon.resetMoves
+  @dummypokemon.giveRibbon(:MIGHTIESTMARK)
+  
+  #Configuraciones adicionales
+  #@dummypokemon.makeShiny
+  #@dummypokemon.setItem(:MEGAPIEDRA)
 end
