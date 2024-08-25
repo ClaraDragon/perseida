@@ -1,3 +1,5 @@
+raid_activa = true
+if raid_activa
 #Selección de Rango
 rank = 2
 
@@ -15,3 +17,4 @@ rank = 2
 #Configuraciones adicionales
 #@dummypokemon.makeShiny
 #@dummypokemon.setItem(:MEGAPIEDRA)
+end
