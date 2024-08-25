@@ -13,5 +13,5 @@ rank = 2
 @dummypokemon.giveRibbon(:MIGHTIESTMARK)
 
 #Configuraciones adicionales
-@dummypokemon.makeShiny
-@dummypokemon.setItem(:MEGAPIEDRA)
+#@dummypokemon.makeShiny
+#@dummypokemon.setItem(:MEGAPIEDRA)
