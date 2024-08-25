@@ -1,2 +1,2 @@
 species = 151
-onlineRaid_Rank = 6
+rank = 6
