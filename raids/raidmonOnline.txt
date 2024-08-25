@@ -1,4 +1,15 @@
-@dummypokemon.species = 6
-@dummypokemon.makeShiny
-@dummypokemon.giveRibbon(:MIGHTIESTMARK)
+#Selección de Rango
 rank = 1
+
+#Selección de la especie del pokémon
+@dummypokemon.species = 6
+@dummypokemon.form = 1
+
+#NO tocar esta parte
+@dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
+@dummypokemon.calcStats
+@dummypokemon.resetMoves
+@dummypokemon.giveRibbon(:MIGHTIESTMARK)
+
+#Configuraciones adicionales
+@dummypokemon.makeShiny
