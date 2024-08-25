@@ -1,5 +1,5 @@
 #Selección de Rango
-rank = 3
+rank = 2
 
 #Selección de la especie del pokémon
 @dummypokemon.species = PBSpecies::ABSOL
