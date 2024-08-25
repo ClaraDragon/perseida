@@ -1,2 +1,4 @@
-species = 151
-rank = 6
+@dummypokemon.species = 6
+@dummypokemon.makeShiny
+@dummypokemon.giveRibbon(:MIGHTIESTMARK)
+rank = 1
