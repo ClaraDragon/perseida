@@ -1,9 +1,10 @@
 #Selección de Rango
-rank = 1
+rank = 3
 
 #Selección de la especie del pokémon
-@dummypokemon.species = 6
-@dummypokemon.form = 1
+@dummypokemon.species = PBSpecies::ABSOL
+#@dummypokemon.form = 1
+
 
 #NO tocar esta parte
 @dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
@@ -13,3 +14,4 @@ rank = 1
 
 #Configuraciones adicionales
 @dummypokemon.makeShiny
+@dummypokemon.setItem(:MEGAPIEDRA)
