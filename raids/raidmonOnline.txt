@@ -2,7 +2,7 @@
 rank = 2
 
 #Selección de la especie del pokémon
-@dummypokemon.species = PBSpecies::ABSOL
+@dummypokemon.species = PBSpecies::ROWLET
 #@dummypokemon.form = 1
 
 
