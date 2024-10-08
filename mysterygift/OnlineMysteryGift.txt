@@ -62,9 +62,9 @@
       ret = true
     end
   end
-  if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") 
+  if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") != "PERSEIDA"
     Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
-    @pokemon=PokeBattle_Pokemon.new(:PICHU,30,$Trainer)
+    @pokemon=PokeBattle_Pokemon.new(:PICHU,10,$Trainer)
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
     @pokemon.ot="PRI2010"
     @pokemon.trainerID=03050
@@ -92,6 +92,7 @@
     showHidePokemon(false) rescue nil
     ret = true
   end
+
   if !ret
     Kernel.pbMessage(_INTL("\\w[negro]No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
   end

@@ -36,6 +36,7 @@ if password=="CR0WN" && GAME_CODE != "VITRO"
     @pokemon.makeShiny
     @pokemon.obtainMode=4
     @pokemon.calcStats
+    @pokemon.ballused=15
     showHidePokemon rescue nil
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
     showHidePokemon(false) rescue nil
@@ -127,6 +128,7 @@ elsif password=="P1K0R3J4" && GAME_CODE != "PERSEIDA"
     end
     @pokemon.happiness=100
     @pokemon.obtainMode=4
+    @pokemon.ballused=15
     @pokemon.calcStats
     showHidePokemon rescue nil
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
@@ -159,6 +161,7 @@ elsif password=="T1M3"
     @pokemon.happiness=100
     @pokemon.obtainMode=4
     @pokemon.calcStats
+    @pokemon.ballused=15
     showHidePokemon rescue nil
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
     showHidePokemon(false) rescue nil
@@ -167,6 +170,124 @@ elsif password=="T1M3"
     Kernel.pbMessage(_INTL("El regalo ya ha sido recibido.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
   end
 
+elsif password=="909TEAMUP06"
+  if !hasEventMon?(PBSpecies::FUECOCO,:CLASSIC,"Roy") 
+    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+    @pokemon=PokeBattle_Pokemon.new(:FUECOCO,5,$Trainer)
+    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
+    @pokemon.ot="Roy"
+    ####################################################
+    @pokemon.trainerID=230512
+    #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+    maxIV = 1
+    @pokemon.iv[rand(6)]=31
+    randivs = [0,1,2,3,4,5]
+    for i in randivs.shuffle
+      next if @pokemon.iv[i]==31
+      maxIV +=1
+      @pokemon.iv[i]=31 
+      break if maxIV>=3
+    end
+    @pokemon.obtainMode=4
+    @pokemon.calcStats
+    @pokemon.ballused=15
+    showHidePokemon rescue nil
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
+    ret = true
+  else
+    Kernel.pbMessage(_INTL("El regalo ya ha sido recibido.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+  end
+elsif password=="D0T1STPARTNER"
+  if !hasEventMon?(PBSpecies::QUAXLY,:CLASSIC,"Dot") 
+    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+    @pokemon=PokeBattle_Pokemon.new(:QUAXLY,5,$Trainer)
+    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
+    @pokemon.ot="Dot"
+    ####################################################
+    @pokemon.trainerID=230414
+    #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+    maxIV = 1
+    @pokemon.iv[rand(6)]=31
+    randivs = [0,1,2,3,4,5]
+    for i in randivs.shuffle
+      next if @pokemon.iv[i]==31
+      maxIV +=1
+      @pokemon.iv[i]=31 
+      break if maxIV>=3
+    end
+    @pokemon.obtainMode=4
+    @pokemon.calcStats
+    @pokemon.ballused=15
+    showHidePokemon rescue nil
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
+    ret = true
+  else
+    Kernel.pbMessage(_INTL("El regalo ya ha sido recibido.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+  end
+elsif password=="L1K0W1TH906"
+  if !hasEventMon?(PBSpecies::SPRIGATITO,:CLASSIC,"Liko") 
+    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+    @pokemon=PokeBattle_Pokemon.new(:SPRIGATITO,5,$Trainer)
+    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
+    @pokemon.ot="Liko"
+    ####################################################
+    @pokemon.trainerID=230414
+    #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+    maxIV = 1
+    @pokemon.iv[rand(6)]=31
+    randivs = [0,1,2,3,4,5]
+    for i in randivs.shuffle
+      next if @pokemon.iv[i]==31
+      maxIV +=1
+      @pokemon.iv[i]=31 
+      break if maxIV>=3
+    end
+    @pokemon.obtainMode=4
+    @pokemon.calcStats
+    @pokemon.ballused=15
+    showHidePokemon rescue nil
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
+    ret = true
+  else
+    Kernel.pbMessage(_INTL("El regalo ya ha sido recibido.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+  end
+
+elsif password=="Y0AS0B1B1R1B1R1"
+  if !hasEventMon?(PBSpecies::PAWMOT,:CLASSIC,"YOASOBI") 
+    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+    @pokemon=PokeBattle_Pokemon.new(:PAWMOT,20,$Trainer)
+    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
+    @pokemon.ot="YOASOBI"
+    ####################################################
+    @pokemon.trainerID=231118
+    #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+    maxIV = 1
+    @pokemon.iv[rand(6)]=31
+    randivs = [0,1,2,3,4,5]
+    for i in randivs.shuffle
+      next if @pokemon.iv[i]==31
+      maxIV +=1
+      @pokemon.iv[i]=31 
+      break if maxIV>=3
+    end
+    @pokemon.pbLearnMove(:DOUBLESHOCK)
+    @pokemon.obtainMode=4
+    @pokemon.calcStats
+    @pokemon.ballused=15
+    showHidePokemon rescue nil
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
+    ret = true
+  else
+    Kernel.pbMessage(_INTL("El regalo ya ha sido recibido.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
+  end
 
 ########################################################################################################
 else
