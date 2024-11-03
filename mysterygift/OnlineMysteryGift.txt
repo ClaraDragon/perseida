@@ -62,7 +62,7 @@
       ret = true
     end
   end
-  if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") != "PERSEIDA"
+  if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") && GAME_CODE != "PERSEIDA"
     Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
     @pokemon=PokeBattle_Pokemon.new(:PICHU,10,$Trainer)
     @pokemon.giveRibbon(PBRibbons::CLASSIC)
