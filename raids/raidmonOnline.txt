@@ -1,4 +1,4 @@
-raid_activa = false
+raid_activa = true
 if raid_activa
   #Selección de Rango
   rank = 2
@@ -6,7 +6,7 @@ if raid_activa
   #Selección de la especie del pokémon
   @dummypokemon.species = PBSpecies::ABSOL
   #@dummypokemon.form = 1
-  
+  @dummypokemon.makeShiny
   
   #NO tocar esta parte
   @dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
