@@ -6,20 +6,16 @@
   ret = false
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
-  if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") 
+  if !hasEventMon?(PBSpecies::EEVEE,:VIGORMARK,"P3RS3IDA") 
     Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
-    @pokemon=PokeBattle_Pokemon.new(:PICHU,5,$Trainer)
+    @pokemon=PokeBattle_Pokemon.new(:EEVEE,5,$Trainer)
     #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
-    @pokemon.giveRibbon(PBRibbons::CLASSIC)
-    @pokemon.ot="PRI2010"
+    @pokemon.giveRibbon(PBRibbons::VIGORMARK)
+    @pokemon.ot="P3RS3IDA"
     ####################################################
-    @pokemon.trainerID=03050
-    @pokemon.setItem(:EVERSTONE)
-    @pokemon.pbLearnMove(:VOLTTACKLE)
-    @pokemon.pbLearnMove(:ENDEAVOR)
-    @pokemon.pbLearnMove(:ENDURE)
+    @pokemon.trainerID=190511
+    @pokemon.pbLearnMove(:IRONTAIL)
     @pokemon.makeShiny
-    @pokemon.setNature(:JOLLY)
     #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
     maxIV = 1
     @pokemon.iv[rand(6)]=31
@@ -30,7 +26,6 @@
       @pokemon.iv[i]=31 
       break if maxIV>=3
     end
-    @pokemon.happiness=100
     @pokemon.obtainMode=4
     @pokemon.calcStats
     showHidePokemon rescue nil
