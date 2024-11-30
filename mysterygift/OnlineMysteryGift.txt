@@ -6,7 +6,7 @@
   ret = false
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
-  if (m == 12 && (d >= 25)) || (m == 1 && (d <= 25))
+  if (m == 12 && (d >= 25)) || (m == 1 && (d <= 10))
     if !hasEventMon?(PBSpecies::JIRACHI,:CLASSIC,"NEWYEAR") 
       Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
       @pokemon=PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
@@ -62,18 +62,16 @@
       ret = true
     end
   end
-  if !hasEventMon?(PBSpecies::PICHU,:CLASSIC,"PRI2010") && GAME_CODE != "PERSEIDA"
-    Kernel.pbMessage(_INTL("\\w[negro]Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
-    @pokemon=PokeBattle_Pokemon.new(:PICHU,10,$Trainer)
-    @pokemon.giveRibbon(PBRibbons::CLASSIC)
-    @pokemon.ot="PRI2010"
-    @pokemon.trainerID=03050
-    @pokemon.setItem(:EVERSTONE)
-    @pokemon.pbLearnMove(:VOLTTACKLE)
-    @pokemon.pbLearnMove(:ENDEAVOR)
-    @pokemon.pbLearnMove(:ENDURE)
+  if !hasEventMon?(PBSpecies::EEVEE,:VIGORMARK,"P3RS3IDA") && GAME_CODE == "PERSEIDA"
+    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+    @pokemon=PokeBattle_Pokemon.new(:EEVEE,5,$Trainer)
+    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    @pokemon.giveRibbon(PBRibbons::VIGORMARK)
+    @pokemon.ot="P3RS3IDA"
+    ####################################################
+    @pokemon.trainerID=190511
+    @pokemon.pbLearnMove(:IRONTAIL)
     @pokemon.makeShiny
-    @pokemon.setNature(:JOLLY)
     #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
     maxIV = 1
     @pokemon.iv[rand(6)]=31
@@ -84,11 +82,10 @@
       @pokemon.iv[i]=31 
       break if maxIV>=3
     end
-    @pokemon.happiness=100
     @pokemon.obtainMode=4
     @pokemon.calcStats
     showHidePokemon rescue nil
-    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    Kernel.pbAddPokemon(@pokemon,5,true,false)
     showHidePokemon(false) rescue nil
     ret = true
   end
