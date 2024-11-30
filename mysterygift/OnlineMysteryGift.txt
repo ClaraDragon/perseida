@@ -63,7 +63,7 @@
     end
   end
   if !hasEventMon?(PBSpecies::EEVEE,:VIGORMARK,"P3RS3IDA") && GAME_CODE == "PERSEIDA"
-    Kernel.pbMessage(_INTL("\\w[menuskin]\\C[8]Regalo Misterioso en línea encontrado.\\wtnp[20]"))
+    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
     @pokemon=PokeBattle_Pokemon.new(:EEVEE,5,$Trainer)
     #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
     @pokemon.giveRibbon(PBRibbons::VIGORMARK)
