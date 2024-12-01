@@ -4,7 +4,7 @@ if raid_activa
   rank = 6
   
   #Selección de la especie del pokémon
-  @dummypokemon.species = PBSpecies::LYCANROCK
+  @dummypokemon.species = PBSpecies::LYCANROC
   @dummypokemon.form = 2
   @dummypokemon.makeNotShiny
 
