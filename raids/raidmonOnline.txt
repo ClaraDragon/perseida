@@ -7,6 +7,7 @@ if raid_activa
   @dummypokemon.species = PBSpecies::LYCANROC
   @dummypokemon.form = 2
   @dummypokemon.makeNotShiny
+  @dummypokemon.setBirthsign(3)
 
   #NO tocar esta parte
   @dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
