@@ -4,10 +4,10 @@ if raid_activa
   rank = 2
   
   #Selección de la especie del pokémon
-  @dummypokemon.species = PBSpecies::ABSOL
-  #@dummypokemon.form = 1
-  @dummypokemon.makeShiny
-  
+  @dummypokemon.species = PBSpecies::LYCANROCK
+  @dummypokemon.form = 2
+  @dummypokemon.makeNotShiny
+
   #NO tocar esta parte
   @dummypokemon.name=PBSpecies.getName(@dummypokemon.species)
   @dummypokemon.calcStats
@@ -16,5 +16,4 @@ if raid_activa
   
   #Configuraciones adicionales
   #@dummypokemon.makeShiny
-  #@dummypokemon.setItem(:MEGAPIEDRA)
 end
