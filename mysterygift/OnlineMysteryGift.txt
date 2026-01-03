@@ -27,6 +27,7 @@
         @pokemon.iv[i]=31 
         break if maxIV>=3
       end
+      @pokemon.ballused=15
       @pokemon.obtainMode=4
       @pokemon.calcStats
       showHidePokemon rescue nil
@@ -54,6 +55,7 @@
         @pokemon.iv[i]=31 
         break if maxIV>=3
       end
+      @pokemon.ballused=15
       @pokemon.obtainMode=4
       @pokemon.calcStats
       showHidePokemon rescue nil
@@ -82,6 +84,7 @@
       @pokemon.iv[i]=31 
       break if maxIV>=3
     end
+    @pokemon.ballused=15
     @pokemon.obtainMode=4
     @pokemon.calcStats
     showHidePokemon rescue nil
@@ -93,3 +96,4 @@
   if !ret
     Kernel.pbMessage(_INTL("\\w[negro]No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
   end
+
