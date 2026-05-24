@@ -3,12 +3,16 @@
     "title": "Nueva actualización v1.1.0 disponible",
     "date": "2024-01-15",
     "description": "Se han añadido nuevos Pokémon y corrección de bugs.",
-    "link": "https://pokemonperseida.blogspot.com/p/gs-vitro-descarga.html"
+    "tag": "ACTUALIZACIÓN",
+    "image": "https://i.imgur.com/ejemplo.png",
+    "link": "https://images.wikidexcdn.net/mwuploads/wikidex/3/34/latest/20241030172925/Pichu_en_el_Encinar.png"
   },
   {
     "title": "Evento especial: Torneo online",
     "date": "2024-01-10",
     "description": "Participa en nuestro torneo y gana premios exclusivos.",
+    "tag": "EVENTO",
+    "image": "https://i.imgur.com/otro.png",
     "link": "https://pokemonperseida.blogspot.com/p/vitro-galeria.html"
   },
   {
