@@ -14,7 +14,7 @@
   ) {
     @item=PBItems::GSBALL
     showHideItem(true) rescue nil
-    Kernel.pbReceiveItem(@item)
+    Kernel.pbReceiveItem(@item) rescue nil
     showHideItem(false) rescue nil
   })
   if (m == 12 && (d >= 25)) || (m == 1 && (d <= 10))
