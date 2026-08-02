@@ -3,6 +3,8 @@
 # Tómalo de base para crear o añadir nuevos eventos. Puedes entregar más de un evento a la vez.
 # Subelo a Pastebin o a Github como un txt y coge el enlace del archivo en RAW.
 ####################################################
+  m = Time.new.month
+  d = Time.new.day
   ret = false
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.

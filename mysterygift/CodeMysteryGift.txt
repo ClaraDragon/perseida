@@ -9,7 +9,8 @@
 # coincide con ningún "when", `gifts` se queda vacío y pbProcessGiftsList ya
 # muestra el aviso correspondiente.
 ####################################################
-
+m = Time.new.month
+d = Time.new.day
 password = pbEnterText(_INTL("Inserta tu código."),0,12).upcase
 
 if password == "CR0WN" && GAME_CODE != "VITRO"
