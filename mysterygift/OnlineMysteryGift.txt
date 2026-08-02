@@ -6,94 +6,99 @@
   ret = false
   #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
   #Para pokemon con evolucion, debes comprobar que esten ambas especies.
+  gifts.push(MysteryGiftCard.new(
+    :RegaloGSBall,
+    _INTL("GS Ball"),
+    [PBItems::GSBALL, :item],  # Array con el icono y el tipo
+    _INTL("Se dice que si llevas la enigmática GS Ball al Encinar, puede suceder algo...")
+  ) {
+    @item=PBItems::GSBALL
+    showHideItem(true) rescue nil
+    Kernel.pbItemBall(@item)
+    showHideItem(false) rescue nil
+  })
   if (m == 12 && (d >= 25)) || (m == 1 && (d <= 10))
-    if !hasEventMon?(PBSpecies::JIRACHI,:CLASSIC,"NEWYEAR") 
-      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
-      @pokemon=PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
-      #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    gifts.push(MysteryGiftCard.new(
+      :RegaloJirachiNEWYEAR,
+      _INTL("Jirachi de año nuevo"),
+      PBSpecies::JIRACHI,
+      _INTL("Un Jirachi especial de año nuevo. ¡Conoce Cometa Draco!")
+    ) {
+      @pokemon = PokeBattle_Pokemon.new(:JIRACHI,5,$Trainer)
       @pokemon.giveRibbon(PBRibbons::CLASSIC)
-      @pokemon.ot="NEWYEAR"
-      ####################################################
-      @pokemon.trainerID=06260
+      @pokemon.ot = "NEWYEAR"
+      @pokemon.trainerID = 06260
       @pokemon.setItem(:LIECHIBERRY)
       @pokemon.pbLearnMove(:DRACOMETEOR)
-      #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
       maxIV = 1
-      @pokemon.iv[rand(6)]=31
-      randivs = [0,1,2,3,4,5]
-      for i in randivs.shuffle
+      @pokemon.iv[rand(6)] = 31
+      [0,1,2,3,4,5].shuffle.each do |i|
         next if @pokemon.iv[i]==31
-        maxIV +=1
-        @pokemon.iv[i]=31 
+        maxIV += 1
+        @pokemon.iv[i] = 31
         break if maxIV>=3
       end
-      @pokemon.ballused=15
-      @pokemon.obtainMode=4
+      @pokemon.ballused = 15
+      @pokemon.obtainMode = 4
       @pokemon.calcStats
       showHidePokemon rescue nil
       Kernel.pbAddPokemon(@pokemon,5,true,false)
       showHidePokemon(false) rescue nil
-      ret = true
-    end
+    })
   end
   if (m == 2 && (d >= 27)) || (m == 3 && (d <= 3))
-    if !hasEventMon?(PBSpecies::MEW,:CLASSIC,"PKMNDAY") 
-      Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
-      @pokemon=PokeBattle_Pokemon.new(:MEW,5,$Trainer)
-      #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
+    gifts.push(MysteryGiftCard.new(
+      :RegaloMewPKMNDAY,
+      _INTL("Mew del Pokemon Day"),
+      PBSpecies::MEW,
+      _INTL("Un Mew especial del Pokemon Day.")
+    ) {
+      @pokemon = PokeBattle_Pokemon.new(:MEW,5,$Trainer)
       @pokemon.giveRibbon(PBRibbons::CLASSIC)
-      @pokemon.ot="PKMNDAY"
-      ####################################################
-      @pokemon.trainerID=10160
-      #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
+      @pokemon.ot = "PKMNDAY"
+      @pokemon.trainerID = 10160
       maxIV = 1
-      @pokemon.iv[rand(6)]=31
-      randivs = [0,1,2,3,4,5]
-      for i in randivs.shuffle
+      @pokemon.iv[rand(6)] = 31
+      [0,1,2,3,4,5].shuffle.each do |i|
         next if @pokemon.iv[i]==31
-        maxIV +=1
-        @pokemon.iv[i]=31 
+        maxIV += 1
+        @pokemon.iv[i] = 31
         break if maxIV>=3
       end
-      @pokemon.ballused=15
-      @pokemon.obtainMode=4
+      @pokemon.ballused = 15
+      @pokemon.obtainMode = 4
       @pokemon.calcStats
       showHidePokemon rescue nil
       Kernel.pbAddPokemon(@pokemon,5,true,false)
       showHidePokemon(false) rescue nil
-      ret = true
-    end
+    })
   end
-  if !hasEventMon?(PBSpecies::EEVEE,:VIGORMARK,"P3RS3IDA") && GAME_CODE == "PERSEIDA"
-    Kernel.pbMessage(_INTL("Regalo Misterioso en línea encontrado.\\wtnp[20]"),nil,0,"Graphics/Windowskins/negro")
-    @pokemon=PokeBattle_Pokemon.new(:EEVEE,5,$Trainer)
-    #ESTOS PARAMETROS SON PARA EL CHECK de hasEventMon?#
-    @pokemon.giveRibbon(PBRibbons::VIGORMARK)
-    @pokemon.ot="P3RS3IDA"
-    ####################################################
-    @pokemon.trainerID=190511
-    @pokemon.pbLearnMove(:IRONTAIL)
-    @pokemon.makeShiny
-    #Esto permite aleatorizar los iv's del pokémon, pero garantiza que 3 de ellos sean perfectos.
-    maxIV = 1
-    @pokemon.iv[rand(6)]=31
-    randivs = [0,1,2,3,4,5]
-    for i in randivs.shuffle
-      next if @pokemon.iv[i]==31
-      maxIV +=1
-      @pokemon.iv[i]=31 
-      break if maxIV>=3
-    end
-    @pokemon.ballused=15
-    @pokemon.obtainMode=4
-    @pokemon.calcStats
-    showHidePokemon rescue nil
-    Kernel.pbAddPokemon(@pokemon,5,true,false)
-    showHidePokemon(false) rescue nil
-    ret = true
+  if GAME_CODE == "PERSEIDA"
+    gifts.push(MysteryGiftCard.new(
+      :RegaloEeveePers3ida,
+      _INTL("Eevee Vigoroso"),
+      PBSpecies::EEVEE,
+      _INTL("Un Eevee con el Emblema Vigor. ¡Conoce Cola Férrea!")
+    ) {
+      @pokemon = PokeBattle_Pokemon.new(:EEVEE,5,$Trainer)
+      @pokemon.giveRibbon(PBRibbons::VIGORMARK)
+      @pokemon.ot = "P3RS3IDA"
+      @pokemon.trainerID = 190511
+      @pokemon.pbLearnMove(:IRONTAIL)
+      @pokemon.makeShiny
+      maxIV = 1
+      @pokemon.iv[rand(6)] = 31
+      [0,1,2,3,4,5].shuffle.each do |i|
+        next if @pokemon.iv[i]==31
+        maxIV += 1
+        @pokemon.iv[i] = 31
+        break if maxIV>=3
+      end
+      @pokemon.ballused = 15
+      @pokemon.obtainMode = 4
+      @pokemon.calcStats
+      showHidePokemon rescue nil
+      Kernel.pbAddPokemon(@pokemon,5,true,false)
+      showHidePokemon(false) rescue nil
+    })
   end
-
-  if !ret
-    Kernel.pbMessage(_INTL("\\w[negro]No se encontró ningún Regalo Misterioso en línea.\\wtnp[20]"))
-  end
-
