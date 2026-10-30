@@ -4,6 +4,38 @@
 # Subelo a Pastebin o a Github como un txt y coge el enlace del archivo en RAW.
 ####################################################
   ret = false
+  gifts.push(MysteryGiftCard.new(
+    :RegaloPichu2010,
+    _INTL("Un Pichu muy pichi"),
+    PBSpecies::PICHU,
+    _INTL("Un Pichu especial. ¡Conoce Placaje Electrico!")
+  ) {
+    @pokemon = PokeBattle_Pokemon.new(:PICHU,10,$Trainer)
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
+    @pokemon.ot = "PRI2010"
+    @pokemon.trainerID = 3050
+    @pokemon.setItem(:EVERSTONE)
+    @pokemon.pbLearnMove(:VOLTTACKLE)
+    @pokemon.pbLearnMove(:ENDEAVOR)
+    @pokemon.pbLearnMove(:ENDURE)
+    @pokemon.makeShiny
+    @pokemon.setNature(:JOLLY)
+    maxIV = 1
+    @pokemon.iv[rand(6)] = 31
+    [0,1,2,3,4,5].shuffle.each do |i|
+      next if @pokemon.iv[i]==31
+      maxIV += 1
+      @pokemon.iv[i] = 31
+      break if maxIV>=3
+    end
+    @pokemon.happiness = 100
+    @pokemon.obtainMode = 4
+    @pokemon.ballused = 15
+    @pokemon.calcStats
+    showHidePokemon rescue nil
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
+  })
   if (m == 11 && (d >= 2))
   gifts.push(MysteryGiftCard.new(
     :RegaloGSBall,
