@@ -4,8 +4,7 @@
 # Subelo a Pastebin o a Github como un txt y coge el enlace del archivo en RAW.
 ####################################################
   ret = false
-  #Comprueba que el jugador ya tenga ese regalo especifico, para objetos es mejor usar otro tipo de check.
-  #Para pokemon con evolucion, debes comprobar que esten ambas especies.
+  if (m == 11 && (d >= 2))
   gifts.push(MysteryGiftCard.new(
     :RegaloGSBall,
     _INTL("GS Ball"),
@@ -17,6 +16,7 @@
     Kernel.pbReceiveItem(@item) rescue nil
     showHideItem(false) rescue nil
   })
+  end
   if (m == 12 && (d >= 25)) || (m == 1 && (d <= 10))
     gifts.push(MysteryGiftCard.new(
       :RegaloJirachiNEWYEAR,
