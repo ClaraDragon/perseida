@@ -100,7 +100,19 @@ if password == "CR0WN" && GAME_CODE != "VITRO"
     Kernel.pbAddPokemon(@pokemon,nil,true,false)
     showHidePokemon(false) rescue nil
   })
-
+elsif password == "0RBS" && GAME_CODE != "PERSEIDA"
+gifts.push(MysteryGiftCard.new(
+    :RegaloGSBall,
+    _INTL("GS Ball"),
+    [PBItems::REDORB, :item],  # Array con el icono y el tipo
+    _INTL("Se dice que si llevas la enigmática GS Ball al Encinar, puede suceder algo...")
+  ) {
+    @item=PBItems::REDORB
+    showHideItem(true) rescue nil
+    Kernel.pbReceiveItem(@item) rescue nil
+    Kernel.pbReceiveItem(PBItems::BLUEORB) rescue nil
+    showHideItem(false) rescue nil
+  })
 elsif password == "P1K0R3J4" && GAME_CODE != "PERSEIDA"
   gifts.push(MysteryGiftCard.new(
     :RegaloPichu2010,
