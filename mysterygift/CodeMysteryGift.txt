@@ -103,9 +103,9 @@ if password == "CR0WN" && GAME_CODE != "VITRO"
 elsif password == "0RBS" && GAME_CODE != "PERSEIDA"
 gifts.push(MysteryGiftCard.new(
     :RegaloGSBall,
-    _INTL("GS Ball"),
+    _INTL("Red and Blue Orbs"),
     [PBItems::REDORB, :item],  # Array con el icono y el tipo
-    _INTL("Se dice que si llevas la enigmática GS Ball al Encinar, puede suceder algo...")
+    _INTL("Fix for a mistake...")
   ) {
     @item=PBItems::REDORB
     showHideItem(true) rescue nil
