@@ -102,7 +102,7 @@ if password == "CR0WN" && GAME_CODE != "VITRO"
   })
 elsif password == "0RBS" && GAME_CODE != "PERSEIDA"
 gifts.push(MysteryGiftCard.new(
-    :RegaloGSBall,
+    :FixORBS,
     _INTL("Red and Blue Orbs"),
     [PBItems::REDORB, :item],  # Array con el icono y el tipo
     _INTL("Fix for a mistake...")
