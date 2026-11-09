@@ -111,6 +111,7 @@ gifts.push(MysteryGiftCard.new(
     showHideItem(true) rescue nil
     Kernel.pbReceiveItem(@item) rescue nil
     Kernel.pbReceiveItem(PBItems::BLUEORB) rescue nil
+    Kernel.pbReceiveItem(PBItems::DRAGONINITE) rescue nil
     showHideItem(false) rescue nil
   })
 elsif password == "P1K0R3J4" && GAME_CODE != "PERSEIDA"
