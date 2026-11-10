@@ -29,7 +29,6 @@ if password == "CR0WN" && GAME_CODE != "VITRO"
     @pokemon.pbLearnMove(:EXTREMESPEED)
     @pokemon.pbLearnMove(:SHEERCOLD)
     @pokemon.setNature(:RELAXED)
-    @pokemon.form = 1
     maxIV = 1
     @pokemon.iv[rand(6)] = 31
     [0,1,2,3,4,5].shuffle.each do |i|
@@ -57,7 +56,6 @@ if password == "CR0WN" && GAME_CODE != "VITRO"
     @pokemon.pbLearnMove(:EXTREMESPEED)
     @pokemon.pbLearnMove(:HOWL)
     @pokemon.setNature(:ADAMANT)
-    @pokemon.form = 1
     maxIV = 1
     @pokemon.iv[rand(6)] = 31
     [0,1,2,3,4,5].shuffle.each do |i|
@@ -84,7 +82,6 @@ if password == "CR0WN" && GAME_CODE != "VITRO"
     @pokemon.pbLearnMove(:EXTREMESPEED)
     @pokemon.pbLearnMove(:AURASPHERE)
     @pokemon.setNature(:RASH)
-    @pokemon.form = 1
     maxIV = 1
     @pokemon.iv[rand(6)] = 31
     [0,1,2,3,4,5].shuffle.each do |i|
@@ -112,6 +109,18 @@ gifts.push(MysteryGiftCard.new(
     Kernel.pbReceiveItem(@item) rescue nil
     Kernel.pbReceiveItem(PBItems::BLUEORB) rescue nil
     Kernel.pbReceiveItem(PBItems::DRAGONINITE) rescue nil
+    showHideItem(false) rescue nil
+  })
+elsif password == "C4NDY"
+gifts.push(MysteryGiftCard.new(
+    :CandyGift,
+    _INTL("Caramelos para todos!"),
+    [PBItems::RARECANDY, :item],  # Array con el icono y el tipo
+    _INTL("Un lote de 10 Caramelos raros")
+  ) {
+    @item=PBItems::RARECANDY
+    showHideItem(true) rescue nil
+    Kernel.pbReceiveItem(@item,10) rescue nil
     showHideItem(false) rescue nil
   })
 elsif password == "P1K0R3J4" && GAME_CODE != "PERSEIDA"
