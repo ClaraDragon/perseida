@@ -111,6 +111,34 @@ gifts.push(MysteryGiftCard.new(
     Kernel.pbReceiveItem(PBItems::DRAGONINITE) rescue nil
     showHideItem(false) rescue nil
   })
+elsif password == "M3T4L" && GAME_CODE != "PERSEIDA"
+  gifts.push(MysteryGiftCard.new(
+    :RegaloMeltanFormulario,
+    _INTL("Meltan"),
+    PBSpecies::MELTAN,
+    _INTL("Un Meltan para ti, ¡gracias por responder el formulario!")
+  ) {
+    @pokemon = PokeBattle_Pokemon.new(:MELTAN,30,$Trainer)
+    @pokemon.giveRibbon(PBRibbons::CLASSIC)
+    @pokemon.ot = "VITRO"
+    @pokemon.trainerID = 3050
+    @pokemon.setNature(:JOLLY)
+    maxIV = 1
+    @pokemon.iv[rand(6)] = 31
+    [0,1,2,3,4,5].shuffle.each do |i|
+      next if @pokemon.iv[i]==31
+      maxIV += 1
+      @pokemon.iv[i] = 31
+      break if maxIV>=3
+    end
+    @pokemon.happiness = 100
+    @pokemon.obtainMode = 4
+    @pokemon.ballused = 15
+    @pokemon.calcStats
+    showHidePokemon rescue nil
+    Kernel.pbAddPokemon(@pokemon,nil,true,false)
+    showHidePokemon(false) rescue nil
+  })
 elsif password == "C4NDY"
 gifts.push(MysteryGiftCard.new(
     :CandyGift,
